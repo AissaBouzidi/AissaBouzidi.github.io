@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="docTitle">مكتب المحاماة - الدفاع الجنائي وقانون الأسرة</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- EmailJS SDK pour l'envoi d'e-mails direct -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // Remplacez "YOUR_PUBLIC_KEY" par votre clé publique EmailJS
+            emailjs.init("YOUR_PUBLIC_KEY");
+        })();
+    </script>
+
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #c59b27;
+            --bg-light: #f8f9fa;
+            --text-color: #2d3748;
+            --white: #ffffff;
+            --border-color: #e2e8f0;
+            --success-color: #38a169;
+            --error-color: #e53e3e;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-color);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Navigation Responsive */
+        nav {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            z-index: 1001;
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .lang-selector {
+            background-color: transparent;
+            color: var(--white);
+            border: 1px solid var(--secondary-color);
+            padding: 0.4rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            outline: none;
+            font-weight: 600;
+        }
+
+        .lang-selector option {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+            transition: 0.3s;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 28px;
+            height: 20px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 100%;
+            height: 3px;
+            background-color: var(--white);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* Layout Structure */
+        section {
+            padding: 3rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin: 0.5rem auto 0;
+        }
+
+        /* Buttons Responsive */
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            border: none;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #a37f1e;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.85)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1350&q=80') center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 5rem 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Grids */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .grid-contact {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 1.8rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .card ul {
+            padding-right: 1.2rem;
+            padding-left: 0;
+        }
+
+        [dir="ltr"] .card ul {
+            padding-right: 0;
+            padding-left: 1.2rem;
+        }
+
+        /* Formulaire & Champs Prise de RDV */
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+            flex: 1;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .form-status {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            border-radius: 4px;
+            display: none;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .form-status.success {
+            background-color: #c6f6d5;
+            color: #22543d;
+            display: block;
+        }
+
+        .form-status.error {
+            background-color: #fed7d7;
+            color: #742a2a;
+            display: block;
+        }
+
+        /* FAQ Accordion */
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 1rem;
+            padding: 1.2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .faq-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 1.5rem;
+            margin-top: 3rem;
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .disclaimer {
+            font-size: 0.85rem;
+            color: #a0aec0;
+            margin-top: 1rem;
+        }
+
+        /* Media Queries */
+        @media (max-width: 992px) {
+            .grid-contact {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 75%;
+                height: 100vh;
+                background-color: var(--primary-color);
+                flex-direction: column;
+                justify-content: center;
+                gap: 2rem;
+                transition: 0.4s ease;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+            }
+
+            [dir="ltr"] .nav-links {
+                right: auto;
+                left: -100%;
+                box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            [dir="ltr"] .nav-links.active {
+                left: 0;
+            }
+
+            .hero {
+                padding: 4rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .btn-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-i18n="logo">مكتب الأستاذة بديرينا</div>
+            
+            <div class="nav-controls">
+                <select id="languageSelect" class="lang-selector" onchange="changeLanguage(this.value)">
+                    <option value="ar" selected>العربية</option>
+                    <option value="fr">Français</option>
+                    <option value="en">English</option>
+                </select>
+
+                <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" onclick="closeMenu()" data-i18n="navHome">الرئيسية</a></li>
+                <li><a href="#about" onclick="closeMenu()" data-i18n="navAbout">عن المحامية</a></li>
+                <li><a href="#criminal" onclick="closeMenu()" data-i18n="navCriminal">القضايا الجنائية</a></li>
+                <li><a href="#family" onclick="closeMenu()" data-i18n="navFamily">قانون الأسرة</a></li>
+                <li><a href="#support" onclick="closeMenu()" data-i18n="navSupport">المواكبة القانونية</a></li>
+                <li><a href="#faq" onclick="closeMenu()" data-i18n="navFaq">أسئلة شائعة</a></li>
+                <li><a href="#contact" onclick="closeMenu()" data-i18n="navContact">اتصل بنا</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 2. Hero Section -->
+    <header class="hero" id="home">
+        <h1 data-i18n="heroTitle">محامية – الدفاع الجنائي، قانون الأسرة والمواكبة القانونية</h1>
+        <p data-i18n="heroSubtitle">استشارات، تمثيل ودفاع في قضاياكم الجنائية والأسرية بكفاءة وسرية تامة.</p>
+        <div class="btn-group">
+            <a href="#contact" class="btn btn-primary" data-i18n="btnAppointment">حجز موعد</a>
+            <a href="#contact" class="btn btn-secondary" data-i18n="btnContact">اتصل بنا</a>
+        </div>
+    </header>
+
+    <!-- Domaines de pratique -->
+    <section>
+        <h2 class="section-title" data-i18n="practiceTitle">مجالات الممارسة</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3 data-i18n="practiceCard1Title">القضايا الجنائية (القانون الجنائي)</h3>
+                <p data-i18n="practiceCard1Desc">الدفاع والتمثيل القانوني أمام المحاكم في كافة القضايا والمخالفات الجنائية.</p>
+                <br>
+                <a href="#criminal" style="color: var(--secondary-color); font-weight: bold;" data-i18n="readMore">اقرأ المزيد &larr;</a>
+            </div>
+            <div class="card">
+                <h3 data-i18n="practiceCard2Title">قضايا الأسرة</h3>
+                <p data-i18n="practiceCard2Desc">الطلاق، الحضانة، النفقة، وتقسيم الممتلكات برؤية متبصرة ودعم إنساني.</p>
+                <br>
+                <a href="#family" style="color: var(--secondary-color); font-weight: bold;" data-i18n="readMore">اقرأ المزيد &larr;</a>
+            </div>
+            <div class="card">
+                <h3 data-i18n="practiceCard3Title">المواكبة القانونية</h3>
+                <p data-i18n="practiceCard3Desc">استشارات قانونية، صياغة العقود والمحررات، والوساطة لحل النزاعات بشكل ودي.</p>
+                <br>
+                <a href="#support" style="color: var(--secondary-color); font-weight: bold;" data-i18n="readMore">اقرأ المزيد &larr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pourquoi nous choisir -->
+    <section style="background-color: #edf2f7; border-radius: 8px;">
+        <h2 class="section-title" data-i18n="whyUsTitle">لماذا تختار مكتبنا؟</h2>
+        <div class="grid-3">
+            <div>
+                <h4 data-i18n="whyUsCard1Title">خبرة متخصصة</h4>
+                <p data-i18n="whyUsCard1Desc">خبرة واسعة في مجال الدفاع الجنائي وقضايا الأحوال الشخصية والأسرة.</p>
+            </div>
+            <div>
+                <h4 data-i18n="whyUsCard2Title">إنصات وسرية</h4>
+                <p data-i18n="whyUsCard2Desc">تعامل إنساني يضمن السرية المطلقة والإنصات الدقيق لاحتياجاتكم.</p>
+            </div>
+            <div>
+                <h4 data-i18n="whyUsCard3Title">مرافقة شاملة</h4>
+                <p data-i18n="whyUsCard3Desc">متابعة كاملة للملف من الاستشارة الأولى إلى غاية التمثيل أمام القضاء.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. À propos -->
+    <section id="about">
+        <h2 class="section-title" data-i18n="aboutTitle">عن المحامية</h2>
+        <div style="background: white; padding: 1.8rem; border-radius: 8px;">
+            <h3 data-i18n="aboutSubtitle">محاميتكم في القانون الجنائي وقانون الأسرة</h3>
+            <p style="margin-top: 1rem;" data-i18n="aboutText1">
+                محامية مسجلة لدى هيئة المحامين (مثال: هيئة مونتريال / أو الهيئة المحلية)، حاصلة على مؤهلات علمية عالية مع سنوات من الخبرة الميدانية في الترافع وإدارة القضايا المعقدة.
+            </p>
+            <h4 style="margin-top: 1.5rem; color: var(--primary-color);" data-i18n="aboutPhilosophyTitle">فلسفة العمل:</h4>
+            <p data-i18n="aboutPhilosophyText">الجمع بين الدقة القانونية والدفاع الشرس عن حقوق الموكلين، مع الاعتماد على نهج إنساني يحترم خصوصية كل ملف.</p>
+            
+            <h4 style="margin-top: 1.5rem; color: var(--primary-color);" data-i18n="aboutLanguagesTitle">اللغات المتقنة:</h4>
+            <p data-i18n="aboutLanguagesText">العربية، الفرنسية، الإنجليزية.</p>
+            <p style="margin-top: 1rem;"><strong data-i18n="aboutNoteTitle">ملاحظة:</strong> <span data-i18n="aboutNoteText">تتوفر الاستشارات عن بُعد (عبر الإنترنت) أو حضوريًا بالمكتب.</span></p>
+        </div>
+    </section>
+
+    <!-- 4. Droit Criminel -->
+    <section id="criminal">
+        <h2 class="section-title" data-i18n="criminalTitle">القضايا الجنائية – الدفاع الجنائي</h2>
+        <p style="text-align: center; margin-bottom: 2rem;" data-i18n="criminalSubtitle">تقديم التمثيل والدفاع القانوني لأي شخص يواجه اتهامات جنائية، من المخالفات البسيطة إلى القضايا المعقدة.</p>
+        
+        <div class="grid-3">
+            <div class="card">
+                <h3 data-i18n="criminalCard1Title">القضايا المعالجة</h3>
+                <ul>
+                    <li data-i18n="criminalCard1Item1">جرائم وتجاوزات القانون الجنائي (السرقة، الاحتيال، الاعتداء)</li>
+                    <li data-i18n="criminalCard1Item2">قضايا المخدرات والمواد الحظورة</li>
+                    <li data-i18n="criminalCard1Item3">القيادة تحت تأثير الكحول أو السرعة المفرطة</li>
+                    <li data-i18n="criminalCard1Item4">الجريمة الإلكترونية (الجرائم المعلوماتية)</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3 data-i18n="criminalCard2Title">مسار القضية</h3>
+                <ul>
+                    <li data-i18n="criminalCard2Item1">الاستشارة الأولى وتحليل أدلة الإثبات</li>
+                    <li data-i18n="criminalCard2Item2">صياغة استراتيجية الدفاع (المفاوضات، المرافعات)</li>
+                    <li data-i18n="criminalCard2Item3">التمثيل أثناء الحراسة النظرية، جلسات الإفراج بكفالة، والمحاكمة</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3 data-i18n="criminalCard3Title">لماذا يجب الاستشارة فوراً؟</h3>
+                <p data-i18n="criminalCard3Desc">الحصول على نصيحة قانونية سريعة في المراحل الأولى من التحقيق أو التوقيف يضمن حماية حقوقك الأساسية وتحسين شروط الإفراج المؤقت.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Droit de la Famille -->
+    <section id="family">
+        <h2 class="section-title" data-i18n="familyTitle">قانون الأسرة – الأحوال الشخصية</h2>
+        <p style="text-align: center; margin-bottom: 2rem;" data-i18n="familySubtitle">دعم قانوني شامل في كافة النزاعات والمساطر الأسرية.</p>
+        
+        <div class="grid-3">
+            <div class="card">
+                <h3 data-i18n="familyCard1Title">مجالات الاختصاص</h3>
+                <ul>
+                    <li data-i18n="familyCard1Item1">الطلاق والتطليق والاتفاقات الودية</li>
+                    <li data-i18n="familyCard1Item2">حضانة الأطفال وحق الزيارة</li>
+                    <li data-i18n="familyCard1Item3">نفقة الأطفال ونفقة الزوجة</li>
+                    <li data-i18n="familyCard1Item4">قسمة الممتلكات والأموال المشتركة</li>
+                    <li data-i18n="familyCard1Item5">أوامر الحماية الحضرية (العنف الأسري)</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3 data-i18n="familyCard2Title">النهج المتبع</h3>
+                <p data-i18n="familyCard2Desc">نُفضل البحث عن حلول تفاوضية (الصلح والوساطة) كلما كان ذلك ممكناً للحفاظ على العلاقات الأسرية، مع التمثيل الصارم أمام المحكمة عند الضرورة.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Accompagnement -->
+    <section id="support">
+        <h2 class="section-title" data-i18n="supportTitle">المواكبة القانونية – الاستشارة والصياغة</h2>
+        <div class="card">
+            <p data-i18n="supportDesc">خدمة موجهة للأفراد الذين يرغبون في فهم حقوقهم وإعداد ملفاتهم دون الحاجة بالضرورة لتوكيل محامٍ في كافة مراحل الدعوى القضائية.</p>
+            <br>
+            <h4 style="color: var(--primary-color);" data-i18n="supportServicesTitle">الخدمات المتاحة:</h4>
+            <ul style="margin-top: 10px;">
+                <li data-i18n="supportItem1">استشارات قانونية دقيقة لتحليل المخاطر والخيارات المتاحة.</li>
+                <li data-i18n="supportItem2">صياغة ومراجعة العقود، الإعذارات، واتفاقيات التسوية.</li>
+                <li data-i18n="supportItem3">مساعدة في إعداد المذكرات والمستندات الموجهة للمحاكم.</li>
+                <li data-i18n="supportItem4">التوجيه نحو الخبراء والوسطاء المعتمدين عند الحاجة.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section id="faq">
+        <h2 class="section-title" data-i18n="faqTitle">أسئلة شائعة (FAQ)</h2>
+        <div class="faq-item">
+            <h4 data-i18n="faqQ1">ماذا أفعل إذا تم توقيفي أو استجوابي من طرف الشرطة؟</h4>
+            <p data-i18n="faqA1">يحق لك الامتناع عن التصريح والتواصل فوراً مع محامٍ قبل الإجابة على أي سؤال. اتصل بالمكتب مباشرة للحصول على المساعدة العاجلة.</p>
+        </div>
+        <div class="faq-item">
+            <h4 data-i18n="faqQ2">هل اللجوء إلى المحكمة إجباري للحصول على الطلاق؟</h4>
+            <p data-i18n="faqA2">ليس دائماً. يمكن الوصول إلى طلاق بالاتفاق الودي وصياغة اتفاقية يتم المصادقة عليها من طرف القاضي دون الحاجة لجلسات نزاعية مطولة.</p>
+        </div>
+        <div class="faq-item">
+            <h4 data-i18n="faqQ3">كيف يتم تحديد قيمة النفقة الخاصة بالأطفال؟</h4>
+            <p data-i18n="faqA3">تُحسب النفقة بناءً على الدخل الإجمالي للوالدين، نسبة الحضانة، والاحتياجات الخاصة بالأطفال وفق الموازين القانونية المعمول بها.</p>
+        </div>
+    </section>
+
+    <!-- 8. Contact & Prise de Rendez-vous -->
+    <section id="contact">
+        <h2 class="section-title" data-i18n="contactTitle">اتصل بنا / حجز موعد</h2>
+        <p style="text-align: center; margin-bottom: 2rem;" data-i18n="contactSubtitle">جميع الاتصالات والمعلومات الواردة تخضع للسرية المهنية المطلقة.</p>
+        
+        <div class="grid-contact">
+            <!-- Formulaire de réservation et de contact -->
+            <div style="background: white; padding: 1.8rem; border-radius: 8px;">
+                <form id="appointmentForm">
+                    <div class="form-group">
+                        <label data-i18n="formName">الاسم الكامل</label>
+                        <input type="text" name="user_name" class="form-control" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-i18n="formEmail">البريد الإلكتروني</label>
+                            <input type="email" name="user_email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="formPhone">رقم الهاتف</label>
+                            <input type="tel" name="user_phone" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <!-- Champs Prise de RDV (Date et Heure) -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-i18n="formDate">تاريخ الموعد المطلوب</label>
+                            <input type="date" name="appointment_date" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="formTime">التوقيت المفصل</label>
+                            <input type="time" name="appointment_time" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label data-i18n="formType">نوع القضية</label>
+                        <select name="case_type" class="form-control">
+                            <option data-i18n="formTypeOption1">قضايا جنائية</option>
+                            <option data-i18n="formTypeOption2">قضايا الأسرة</option>
+                            <option data-i18n="formTypeOption3">استشارة / مواكبة قانونية</option>
+                            <option data-i18n="formTypeOption4">آخر</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label data-i18n="formMessage">رسالتك / تفاصيل موجزة</label>
+                        <textarea name="message" class="form-control" rows="4"></textarea>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%;" data-i18n="formSubmit">إرسال الطلب</button>
+                    
+                    <!-- Message de confirmation ou d'erreur -->
+                    <div id="formStatus" class="form-status"></div>
+                </form>
+            </div>
+
+            <!-- Contact info -->
+            <div class="card">
+                <h3 data-i18n="contactInfoTitle">معلومات الاتصال</h3>
+                <br>
+                <p><strong data-i18n="contactAddressTitle">العنوان:</strong> <span data-i18n="contactAddressText">الشارع الرئيسي،  (أو العنوان المحلي)</span></p>
+                <p><strong data-i18n="contactPhoneTitle">الهاتف:</strong> 0021323XXXXXXX</p>
+                <p><strong data-i18n="contactEmailTitle">البريد الإلكتروني:</strong> contact@avcabinet.com</p>
+                <br>
+                <h4 data-i18n="contactHoursTitle">أوقات العمل:</h4>
+                <p data-i18n="contactHoursWeek">من الأحد إلى الخميس: 9:00 صباحاً – 5:00 مساءً</p>
+                <p data-i18n="contactHoursWeekend">الجمعة و السبت: مغلق (متاح الحالات الطارئة الجنائية)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p data-i18n="footerRights">&copy; 2026 جميع الحقوق محفوظة - الأستاذة المحامية</p>
+        <div class="disclaimer">
+            <p><strong data-i18n="disclaimerTitle">تنبيه قانوني:</strong> <span data-i18n="disclaimerText">المعلومات المقدمة في هذا الموقع هي لأغراض إعلامية فقط ولا تُعتبر استشارة قانونية حاسمة. التواصل عبر الموقع لا ينشئ تلقائياً علاقة بين المحامي والموكل حتى يتم توقيع عقد التوكيل الرسمي. مسجلة لدى هيئة المحامين.</span></p>
+        </div>
+    </footer>
+
+    <!-- Scripts pour Traduction, Menu Mobile et Envoi d'E-mail -->
+    <script>
+        // --- Navigation Menu Burger ---
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburgerBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        function closeMenu() {
+            navLinks.classList.remove('active');
+        }
+
+        // --- Gestion des Traductions ---
+        const translations = {
+            ar: {
+                docTitle: "مكتب المحاماة - الدفاع الجنائي وقانون الأسرة",
+                logo: "مكتب الأستاذة بديرينا",
+                navHome: "الرئيسية",
+                navAbout: "عن المحامية",
+                navCriminal: "القضايا الجنائية",
+                navFamily: "قانون الأسرة",
+                navSupport: "المواكبة القانونية",
+                navFaq: "أسئلة شائعة",
+                navContact: "اتصل بنا",
+                heroTitle: "محامية – الدفاع الجنائي، قانون الأسرة والمواكبة القانونية",
+                heroSubtitle: "استشارات، تمثيل ودفاع في قضاياكم الجنائية والأسرية بكفاءة وسرية تامة.",
+                btnAppointment: "حجز موعد",
+                btnContact: "اتصل بنا",
+                practiceTitle: "مجالات الممارسة",
+                practiceCard1Title: "القضايا الجنائية (القانون الجنائي)",
+                practiceCard1Desc: "الدفاع والتمثيل القانوني أمام المحاكم في كافة القضايا والمخالفات الجنائية.",
+                practiceCard2Title: "قضايا الأسرة",
+                practiceCard2Desc: "الطلاق، الحضانة، النفقة، وتقسيم الممتلكات برؤية متبصرة ودعم إنساني.",
+                practiceCard3Title: "المواكبة القانونية",
+                practiceCard3Desc: "استشارات قانونية، صياغة العقود والمحررات، والوساطة لحل النزاعات بشكل ودي.",
+                readMore: "اقرأ المزيد ←",
+                whyUsTitle: "لماذا تختار مكتبنا؟",
+                whyUsCard1Title: "خبرة متخصصة",
+                whyUsCard1Desc: "خبرة واسعة في مجال الدفاع الجنائي وقضايا الأحوال الشخصية والأسرة.",
+                whyUsCard2Title: "إنصات وسرية",
+                whyUsCard2Desc: "تعامل إنساني يضمن السرية المطلقة والإنصات الدقيق لاحتياجاتكم.",
+                whyUsCard3Title: "مرافقة شاملة",
+                whyUsCard3Desc: "متابعة كاملة للملف من الاستشارة الأولى إلى غاية التمثيل أمام القضاء.",
+                aboutTitle: "عن المحامية",
+                aboutSubtitle: "محاميتكم في القانون الجنائي وقانون الأسرة",
+                aboutText1: "محامية مسجلة لدى هيئة المحامين (مثال: هيئة مونتريال / أو الهيئة المحلية)، حاصلة على مؤهلات علمية عالية مع سنوات من الخبرة الميدانية في الترافع وإدارة القضايا المعقدة.",
+                aboutPhilosophyTitle: "فلسفة العمل:",
+                aboutPhilosophyText: "الجمع بين الدقة القانونية والدفاع الشرس عن حقوق الموكلين، مع الاعتماد على نهج إنساني يحترم خصوصية كل ملف.",
+                aboutLanguagesTitle: "اللغات المتقنة:",
+                aboutLanguagesText: "العربية، الفرنسية، الإنجليزية.",
+                aboutNoteTitle: "ملاحظة:",
+                aboutNoteText: "تتوفر الاستشارات عن بُعد (عبر الإنترنت) أو حضوريًا بالمكتب.",
+                criminalTitle: "القضايا الجنائية – الدفاع الجنائي",
+                criminalSubtitle: "تقديم التمثيل والدفاع القانوني لأي شخص يواجه اتهامات جنائية، من المخالفات البسيطة إلى القضايا المعقدة.",
+                criminalCard1Title: "القضايا المعالجة",
+                criminalCard1Item1: "جرائم وتجاوزات القانون الجنائي (السرقة، الاحتيال، الاعتداء)",
+                criminalCard1Item2: "قضايا المخدرات والمواد الحظورة",
+                criminalCard1Item3: "القيادة تحت تأثير الكحول أو السرعة المفرطة",
+                criminalCard1Item4: "الجريمة الإلكترونية (الجرائم المعلوماتية)",
+                criminalCard2Title: "مسار القضية",
+                criminalCard2Item1: "الاستشارة الأولى وتحليل أدلة الإثبات",
+                criminalCard2Item2: "صياغة استراتيجية الدفاع (المفاوضات، المرافعات)",
+                criminalCard2Item3: "التمثيل أثناء الحراسة النظرية، جلسات الإفراج بكفالة، والمحاكمة",
+                criminalCard3Title: "لماذا يجب الاستشارة فوراً؟",
+                criminalCard3Desc: "الحصول على نصيحة قانونية سريعة في المراحل الأولى من التحقيق أو التوقيف يضمن حماية حقوقك الأساسية وتحسين شروط الإفراج المؤقت.",
+                familyTitle: "قانون الأسرة – الأحوال الشخصية",
+                familySubtitle: "دعم قانوني شامل في كافة النزاعات والمساطر الأسرية.",
+                familyCard1Title: "مجالات الاختصاص",
+                familyCard1Item1: "الطلاق والتطليق والاتفاقات الودية",
+                familyCard1Item2: "حضانة الأطفال وحق الزيارة",
+                familyCard1Item3: "نفقة الأطفال ونفقة الزوجة",
+                familyCard1Item4: "قسمة الممتلكات والأموال المشتركة",
+                familyCard1Item5: "أوامر الحماية الحضرية (العنف الأسري)",
+                familyCard2Title: "النهج المتبع",
+                familyCard2Desc: "نُفضل البحث عن حلول تفاوضية (الصلح والوساطة) كلما كان ذلك ممكناً للحفاظ على العلاقات الأسرية، مع التمثيل الصارم أمام المحكمة عند الضرورة.",
+                supportTitle: "المواكبة القانونية – الاستشارة والصياغة",
+                supportDesc: "خدمة موجهة للأفراد الذين يرغبون في فهم حقوقهم وإعداد ملفاتهم دون الحاجة بالضرورة لتوكيل محامٍ في كافة مراحل الدعوى القضائية.",
+                supportServicesTitle: "الخدمات المتاحة:",
+                supportItem1: "استشارات قانونية دقيقة لتحليل المخاطر والخيارات المتاحة.",
+                supportItem2: "صياغة ومراجعة العقود، الإعذارات، واتفاقيات التسوية.",
+                supportItem3: "مساعدة في إعداد المذكرات والمستندات الموجهة للمحاكم.",
+                supportItem4: "التوجيه نحو الخبراء والوسطاء المعتمدين عند الحاجة.",
+                faqTitle: "أسئلة شائعة (FAQ)",
+                faqQ1: "ماذا أفعل إذا تم توقيفي أو استجوابي من طرف الشرطة؟",
+                faqA1: "يحق لك الامتناع عن التصريح والتواصل فوراً مع محامٍ قبل الإجابة على أي سؤال. اتصل بالمكتب مباشرة للحصول على المساعدة العاجلة.",
+                faqQ2: "هل اللجوء إلى المحكمة إجباري للحصول على الطلاق؟",
+                faqA2: "ليس دائماً. يمكن الوصول إلى طلاق بالاتفاق الودي وصياغة اتفاقية يتم المصادقة عليها من طرف القاضي دون الحاجة لجلسات نزاعية مطولة.",
+                faqQ3: "كيف يتم تحديد قيمة النفقة الخاصة بالأطفال؟",
+                faqA3: "تُحسب النفقة بناءً على الدخل الإجمالي للوالدين، نسبة الحضانة، والاحتياجات الخاصة بالأطفال وفق الموازين القانونية المعمول بها.",
+                contactTitle: "اتصل بنا / حجز موعد",
+                contactSubtitle: "جميع الاتصالات والمعلومات الواردة تخضع للسرية المهنية المطلقة.",
+                formName: "الاسم الكامل",
+                formEmail: "البريد الإلكتروني",
+                formPhone: "رقم الهاتف",
+                formDate: "تاريخ الموعد المطلوب",
+                formTime: "التوقيت المفضل",
+                formType: "نوع القضية",
+                formTypeOption1: "قضايا جنائية",
+                formTypeOption2: "قضايا الأسرة",
+                formTypeOption3: "استشارة / مواكبة قانونية",
+                formTypeOption4: "آخر",
+                formMessage: "رسالتك / تفاصيل موجزة",
+                formSubmit: "إرسال طلب الموعد",
+                contactInfoTitle: "معلومات الاتصال",
+                contactAddressTitle: "العنوان:",
+                contactAddressText: "الشارع الرئيسي، (أو العنوان المحلي)",
+                contactPhoneTitle: "الهاتف:",
+                contactEmailTitle: "البريد الإلكتروني:",
+                contactHoursTitle: "أوقات العمل:",
+                contactHoursWeek: "من الأحد إلى الخميس: 9:00 صباحاً – 5:00 مساءً",
+                contactHoursWeekend: "الجمعة و السبت: مغلق (متاح الحالات الطارئة الجنائية)",
+                footerRights: "© 2026 جميع الحقوق محفوظة - الأستاذة المحامية",
+                disclaimerTitle: "تنبيه قانوني:",
+                disclaimerText: "المعلومات المقدمة في هذا الموقع هي لأغراض إعلامية فقط ولا تُعتبر استشارة قانونية حاسمة. التواصل عبر الموقع لا ينشئ تلقائياً علاقة بين المحامي والموكل حتى يتم توقيع عقد التوكيل الرسمي. مسجلة لدى هيئة المحامين.",
+                msgSending: "جاري إرسال الطلب...",
+                msgSuccess: "تم إرسال طلب الموعد بنجاح! سنتصل بك قريباً لتأكيد الموعد.",
+                msgError: "حدث خطأ أثناء الإرسال. يرجى إعادة المحاولة أو الاتصال بنا مباشرة."
+            },
+            fr: {
+                docTitle: "Cabinet d'Avocat - Défense Criminelle et Droit de la Famille",
+                logo: "Cabinet Me Bidirina",
+                navHome: "Accueil",
+                navAbout: "À propos",
+                navCriminal: "Droit Criminel",
+                navFamily: "Droit de la Famille",
+                navSupport: "Accompagnement",
+                navFaq: "FAQ",
+                navContact: "Contact",
+                heroTitle: "Avocate – Défense criminelle, Droit de la famille et Accompagnement juridique",
+                heroSubtitle: "Consultation, représentation et défense dans vos affaires criminelles et familiales avec rigueur et confidentialité.",
+                btnAppointment: "Prendre RDV",
+                btnContact: "Contactez-nous",
+                practiceTitle: "Domaines de pratique",
+                practiceCard1Title: "Affaires criminelles (Droit criminel)",
+                practiceCard1Desc: "Défense et représentation juridique devant les tribunaux pour toutes infractions criminelles.",
+                practiceCard2Title: "Droit de la famille",
+                practiceCard2Desc: "Divorce, garde d'enfants, pension alimentaire et partage des biens avec écoute et humanité.",
+                practiceCard3Title: "Accompagnement juridique",
+                practiceCard3Desc: "Conseils juridiques, rédaction de contrats et médiation pour résoudre les litiges à l'amiable.",
+                readMore: "En savoir plus →",
+                whyUsTitle: "Pourquoi choisir notre cabinet ?",
+                whyUsCard1Title: "Expertise spécialisée",
+                whyUsCard1Desc: "Grande expérience en défense criminelle et en droit de la famille.",
+                whyUsCard2Title: "Écoute et confidentialité",
+                whyUsCard2Desc: "Approche humaine garantissant une confidentialité absolue et un suivi personnalisé.",
+                whyUsCard3Title: "Prise en charge complète",
+                whyUsCard3Desc: "Suivi rigoureux du dossier, de la première consultation à la représentation au tribunal.",
+                aboutTitle: "À propos de l'Avocate",
+                aboutSubtitle: "Votre avocate en droit criminel et droit de la famille",
+                aboutText1: "Avocate inscrite au Barreau (ex. Barreau de Montréal / Barreau local), possédant de solides compétences académiques et plusieurs années d'expérience dans la plaidoirie et la gestion de cas complexes.",
+                aboutPhilosophyTitle: "Philosophie de travail :",
+                aboutPhilosophyText: "Allier la rigueur juridique à une défense ferme des droits des clients, avec une approche humaine respectueuse de la situation de chacun.",
+                aboutLanguagesTitle: "Langues parlées :",
+                aboutLanguagesText: "Arabe, Français, Anglais.",
+                aboutNoteTitle: "Note :",
+                aboutNoteText: "Consultations disponibles en ligne (à distance) ou en personne au cabinet.",
+                criminalTitle: "Affaires criminelles – Défense criminelle",
+                criminalSubtitle: "Représentation et défense juridique pour toute personne faisant face à des accusations criminelles, des infractions mineures aux dossiers complexes.",
+                criminalCard1Title: "Cas traités",
+                criminalCard1Item1: "Infractions au Code criminel (vol, fraude, voies de fait)",
+                criminalCard1Item2: "Dossiers liés aux stupéfiants et substances contrôlées",
+                criminalCard1Item3: "Conduite avec facultés affaiblies et excès de vitesse",
+                criminalCard1Item4: "Cybercriminalité et infractions informatiques",
+                criminalCard2Title: "Déroulement de la procédure",
+                criminalCard2Item1: "Première consultation et analyse des preuves",
+                criminalCard2Item2: "Élaboration de la stratégie de défense (négociations, plaidoiries)",
+                criminalCard2Item3: "Représentation en garde à vue, enquêtes sur la libération et procès",
+                criminalCard3Title: "Pourquoi consulter immédiatement ?",
+                criminalCard3Desc: "Obtenir un conseil juridique dès les premières étapes de l'enquête ou de l'arrestation garantit la protection de vos droits fondamentaux.",
+                familyTitle: "Droit de la famille – État civil",
+                familySubtitle: "Un soutien juridique complet dans tous vos litiges et procédures familiales.",
+                familyCard1Title: "Domaines d'intervention",
+                familyCard1Item1: "Divorce et accords à l'amiable",
+                familyCard1Item2: "Garde d'enfants et droits d'accès",
+                familyCard1Item3: "Pensions alimentaires pour enfants et conjoint",
+                familyCard1Item4: "Partage du patrimoine et des biens communs",
+                familyCard1Item5: "Ordonnances de protection (violence conjugale)",
+                familyCard2Title: "Notre approche",
+                familyCard2Desc: "Nous privilégions les solutions négociées (conciliation et médiation) lorsque possible, tout en assurant une représentation ferme devant le tribunal au besoin.",
+                supportTitle: "Accompagnement – Conseil et Rédaction",
+                supportDesc: "Un service destiné aux personnes souhaitant comprendre leurs droits et préparer leur dossier sans nécessairement confier la représentation complète.",
+                supportServicesTitle: "Services disponibles :",
+                supportItem1: "Consultations juridiques précises pour évaluer les risques et options.",
+                supportItem2: "Rédaction et révision de contrats, mises en demeure et ententes.",
+                supportItem3: "Aide à la préparation des procédures et documents soumis à la cour.",
+                supportItem4: "Orientation vers des experts et médiateurs agréés si nécessaire.",
+                faqTitle: "Foire Aux Questions (FAQ)",
+                faqQ1: "Que faire si je suis arrêté ou interrogé par la police ?",
+                faqA1: "Vous avez le droit de garder le silence et de contacter immédiatement un avocat. Contactez notre cabinet sans délai pour assistance d'urgence.",
+                faqQ2: "Le recours au tribunal est-il obligatoire pour divorcer ?",
+                faqA2: "Pas toujours. Un divorce à l'amiable peut être conclu via une convention soumise au juge sans passer par un procès long et conflictuel.",
+                faqQ3: "Comment est déterminé le montant de la pension alimentaire ?",
+                faqA3: "Elle est calculée selon le revenu global des parents, le temps de garde et les besoins spécifiques des enfants, conformément aux barèmes légaux.",
+                contactTitle: "Contact / Prendre RDV",
+                contactSubtitle: "Toutes les communications et informations fournies sont couvertes par le secret professionnel.",
+                formName: "Nom complet",
+                formEmail: "Courriel",
+                formPhone: "Téléphone",
+                formDate: "Date souhaitée du RDV",
+                formTime: "Heure souhaitée",
+                formType: "Type de dossier",
+                formTypeOption1: "Droit criminel",
+                formTypeOption2: "Droit de la famille",
+                formTypeOption3: "Consultation / Accompagnement",
+                formTypeOption4: "Autre",
+                formMessage: "Votre message / Détails",
+                formSubmit: "Envoyer la demande de RDV",
+                contactInfoTitle: "Coordonnées",
+                contactAddressTitle: "Adresse :",
+                contactAddressText: "Rue principale, (ou adresse locale)",
+                contactPhoneTitle: "Téléphone :",
+                contactEmailTitle: "Courriel :",
+                contactHoursTitle: "Heures d'ouverture :",
+                contactHoursWeek: "Dimanche a Jeudi : 9h00 – 17h00",
+                contactHoursWeekend: "Vendredi et Samedi: Fermé (Urgence criminelle disponible)",
+                footerRights: "© 2026 Tous droits réservés - Cabinet d'Avocat",
+                disclaimerTitle: "Avis juridique :",
+                disclaimerText: "Les informations fournies sur ce site le sont à titre informatif seulement et ne constituent pas un avis juridique. L'envoi d'un message ne crée pas automatiquement une relation avocat-client tant qu'un mandat officiel n'a pas été signé.",
+                msgSending: "Envoi de la demande en cours...",
+                msgSuccess: "Votre demande de RDV a été envoyée avec succès ! Nous vous contacterons sous peu pour confirmer.",
+                msgError: "Une erreur est survenue lors de l'envoi. Veuillez réessayer ou nous contacter par téléphone."
+            },
+            en: {
+                docTitle: "Law Office - Criminal Defense & Family Law",
+                logo: "Adv. Bidirina Law Firm",
+                navHome: "Home",
+                navAbout: "About Us",
+                navCriminal: "Criminal Defense",
+                navFamily: "Family Law",
+                navSupport: "Legal Support",
+                navFaq: "FAQ",
+                navContact: "Contact",
+                heroTitle: "Attorney – Criminal Defense, Family Law & Legal Support",
+                heroSubtitle: "Consultation, representation, and defense in your criminal and family law matters with dedication and confidentiality.",
+                btnAppointment: "Book Appointment",
+                btnContact: "Contact Us",
+                practiceTitle: "Practice Areas",
+                practiceCard1Title: "Criminal Defense",
+                practiceCard1Desc: "Legal defense and representation in court for all criminal charges and offenses.",
+                practiceCard2Title: "Family Law",
+                practiceCard2Desc: "Divorce, child custody, alimony, and asset division with empathetic guidance.",
+                practiceCard3Title: "Legal Support & Consulting",
+                practiceCard3Desc: "Legal advice, contract drafting, and mediation to resolve disputes amicably.",
+                readMore: "Read More →",
+                whyUsTitle: "Why Choose Our Firm?",
+                whyUsCard1Title: "Specialized Expertise",
+                whyUsCard1Desc: "Extensive experience in criminal defense and family law procedures.",
+                whyUsCard2Title: "Confidentiality & Care",
+                whyUsCard2Desc: "Compassionate approach ensuring absolute confidentiality and tailored attention.",
+                whyUsCard3Title: "Comprehensive Guidance",
+                whyUsCard3Desc: "Full support from initial consultation through courtroom representation.",
+                aboutTitle: "About the Attorney",
+                aboutSubtitle: "Your Advocate in Criminal and Family Law",
+                aboutText1: "Licensed Bar Member (e.g., Montreal Bar / Local Bar) with strong academic credentials and years of trial experience managing complex cases.",
+                aboutPhilosophyTitle: "Work Philosophy:",
+                aboutPhilosophyText: "Combining legal precision with vigorous defense of client rights, guided by a human approach respecting individual privacy.",
+                aboutLanguagesTitle: "Languages Spoken:",
+                aboutLanguagesText: "Arabic, French, English.",
+                aboutNoteTitle: "Note:",
+                aboutNoteText: "Consultations are available remotely (online) or in-person at the office.",
+                criminalTitle: "Criminal Defense",
+                criminalSubtitle: "Providing legal defense and representation for individuals facing criminal charges, from minor offenses to complex cases.",
+                criminalCard1Title: "Handled Cases",
+                criminalCard1Item1: "Criminal Code offenses (theft, fraud, assault)",
+                criminalCard1Item2: "Drug and controlled substances cases",
+                criminalCard1Item3: "DUI / Impaired driving and traffic violations",
+                criminalCard1Item4: "Cybercrime and digital offenses",
+                criminalCard2Title: "Case Process",
+                criminalCard2Item1: "Initial consultation and evidence review",
+                criminalCard2Item2: "Defense strategy planning (negotiations, hearings)",
+                criminalCard2Item3: "Representation during custody, bail hearings, and trial",
+                criminalCard3Title: "Why Consult Immediately?",
+                criminalCard3Desc: "Prompt legal counsel during early investigation or arrest ensures protection of your fundamental rights.",
+                familyTitle: "Family Law & Personal Status",
+                familySubtitle: "Comprehensive legal assistance in all family disputes and court proceedings.",
+                familyCard1Title: "Areas of Practice",
+                familyCard1Item1: "Divorce, separation, and amicable agreements",
+                familyCard1Item2: "Child custody and access rights",
+                familyCard1Item3: "Child support and spousal maintenance",
+                familyCard1Item4: "Division of marital property and assets",
+                familyCard1Item5: "Protection orders (domestic violence)",
+                familyCard2Title: "Our Approach",
+                familyCard2Desc: "We prioritize negotiated settlements (mediation and conciliation) whenever possible, offering assertive court representation when necessary.",
+                supportTitle: "Legal Support & Drafting",
+                supportDesc: "Designed for individuals seeking to understand their rights and prepare documents without requiring full court representation.",
+                supportServicesTitle: "Available Services:",
+                supportItem1: "Tailored legal consultations to assess options and risks.",
+                supportItem2: "Drafting and reviewing contracts, formal notices, and settlement agreements.",
+                supportItem3: "Assistance in preparing court pleadings and legal documentation.",
+                supportItem4: "Referrals to certified experts and mediators when needed.",
+                faqTitle: "Frequently Asked Questions (FAQ)",
+                faqQ1: "What should I do if arrested or questioned by police?",
+                faqA1: "You have the right to remain silent and contact an attorney immediately. Contact our firm right away for urgent assistance.",
+                faqQ2: "Is going to court mandatory to get a divorce?",
+                faqA2: "Not always. Amicable divorces can be settled via an agreement submitted for judicial approval without lengthy court battles.",
+                faqQ3: "How is child support calculated?",
+                faqA3: "It is calculated based on parental gross income, custody share, and specific needs of the children following legal guidelines.",
+                contactTitle: "Contact Us / Book Appointment",
+                contactSubtitle: "All communications and information submitted are strictly confidential.",
+                formName: "Full Name",
+                formEmail: "Email",
+                formPhone: "Phone Number",
+                formDate: "Preferred Appointment Date",
+                formTime: "Preferred Time",
+                formType: "Case Type",
+                formTypeOption1: "Criminal Defense",
+                formTypeOption2: "Family Law",
+                formTypeOption3: "Consultation / Support",
+                formTypeOption4: "Other",
+                formMessage: "Message / Brief Details",
+                formSubmit: "Send Appointment Request",
+                contactInfoTitle: "Contact Information",
+                contactAddressTitle: "Address:",
+                contactAddressText: "Main Street, Algiers (or local address)",
+                contactPhoneTitle: "Phone:",
+                contactEmailTitle: "Email:",
+                contactHoursTitle: "Office Hours:",
+                contactHoursWeek: "Sunday to Thursday: 9:00 AM – 5:00 PM",
+                contactHoursWeekend: "Friday and Saturday: Closed (Available for Criminal Emergencies)",
+                footerRights: "© 2026 All Rights Reserved - Law Firm",
+                disclaimerTitle: "Legal Disclaimer:",
+                disclaimerText: "The information provided on this website is for informational purposes only and does not constitute formal legal advice. Contacting us does not automatically create an attorney-client relationship until an official agreement is signed.",
+                msgSending: "Sending request...",
+                msgSuccess: "Your appointment request was sent successfully! We will contact you shortly to confirm.",
+                msgError: "An error occurred while sending. Please try again or contact us directly."
+            }
+        };
+
+        let currentLang = 'ar';
+
+        function changeLanguage(lang) {
+            currentLang = lang;
+            const html = document.documentElement;
+            
+            if (lang === 'ar') {
+                html.setAttribute('dir', 'rtl');
+                html.setAttribute('lang', 'ar');
+            } else {
+                html.setAttribute('dir', 'ltr');
+                html.setAttribute('lang', lang);
+            }
+
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+        }
+
+        // --- Gestion de la soumission du Formulaire avec EmailJS ---
+        document.getElementById('appointmentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const statusDiv = document.getElementById('formStatus');
+            const submitBtn = document.getElementById('submitBtn');
+
+            // Affichage du statut "En cours"
+            statusDiv.className = 'form-status';
+            statusDiv.style.display = 'block';
+            statusDiv.style.backgroundColor = '#edf2f7';
+            statusDiv.style.color = '#2d3748';
+            statusDiv.textContent = translations[currentLang].msgSending;
+            submitBtn.disabled = true;
+
+            // Envoi de l'e-mail via EmailJS
+            // Remplacez "YOUR_SERVICE_ID" et "YOUR_TEMPLATE_ID" par vos identifiants EmailJS
+            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+                .then(function() {
+                    statusDiv.className = 'form-status success';
+                    statusDiv.textContent = translations[currentLang].msgSuccess;
+                    document.getElementById('appointmentForm').reset();
+                    submitBtn.disabled = false;
+                }, function(error) {
+                    console.error('EmailJS Error:', error);
+                    statusDiv.className = 'form-status error';
+                    statusDiv.textContent = translations[currentLang].msgError;
+                    submitBtn.disabled = false;
+                });
+        });
+    </script>
+</body>
+</html>
